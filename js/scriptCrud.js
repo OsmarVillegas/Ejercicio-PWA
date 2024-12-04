@@ -1,3 +1,45 @@
+// Abrir la base de datos con una versión específica
+const request = indexedDB.open("FrasesDB", 1); // Si cambia el esquema, incrementa la versión
+
+// Crear el object store si es necesario
+request.onupgradeneeded = function(event) {
+  const db = event.target.result;
+  if (!db.objectStoreNames.contains("frases")) {
+    const store = db.createObjectStore("frases", { keyPath: "id", autoIncrement: true });
+    store.createIndex("frase", "frase", { unique: false });
+    store.createIndex("codigoMorse", "codigoMorse", { unique: false });
+  }
+};
+
+// Cuando la base de datos está lista
+request.onsuccess = function(event) {
+  const db = event.target.result;
+
+  // Aquí puedes realizar las transacciones o operaciones que desees
+  console.log("Base de datos abierta correctamente.");
+};
+
+// En caso de error
+request.onerror = function(event) {
+  console.error("Error al abrir la base de datos:", event.target.error);
+};
+
+// Función para guardar datos en la base de datos
+function guardarEnIndexedDB(frase, codigoMorse) {
+  const transaction = db.transaction(["frases"], "readwrite");
+  const store = transaction.objectStore("frases");
+  store.add({ frase, codigoMorse });
+
+  transaction.oncomplete = function() {
+    console.log("Frase guardada correctamente.");
+  };
+
+  transaction.onerror = function(event) {
+    console.error("Error al guardar la frase:", event.target.error);
+  };
+}
+
+
 document.addEventListener("DOMContentLoaded", async () => {
     // Mapeo de caracteres a código Morse
     const morseCodeMap = {

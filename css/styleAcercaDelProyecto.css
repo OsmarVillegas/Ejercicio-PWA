@@ -41,6 +41,60 @@
   color: white;
 }
 
+#contenido {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 3%;
+}
+
+.contenido__material {
+}
+
+.contenido__titulo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenido__titulo h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3.5rem;
+}
+
+.contenido__titulo h1 span {
+  color: #e7571d;
+}
+
+#contenido__imagen {
+  margin-top: 5%;
+}
+
+.contenido__notificaciones {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boton {
+  background-color: #e7571d;
+  color: white;
+}
+
+.boton:hover {
+  transition: 0.5s;
+  transform: scale(1.1);
+  color: white;
+  font-weight: 700;
+}
+
+
 @media (max-width: 950px) {
   #contenido {
     flex-direction: column;
