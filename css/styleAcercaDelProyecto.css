@@ -94,6 +94,10 @@
   font-weight: 700;
 }
 
+#contenido__imagen img{
+  width: 100%;
+  height: auto;
+}
 
 @media (max-width: 950px) {
   #contenido {
@@ -151,4 +155,5 @@
   .navegador__contenido a {
     font-size: 0.75rem;
   }
+
 }

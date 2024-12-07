@@ -1,5 +1,5 @@
 const form = document.getElementById('myform');
-console.log(form);
+
 const message = document.querySelector('#message');
 
 form.addEventListener('submit', e => { 
@@ -15,4 +15,3 @@ form.addEventListener('submit', e => {
     })
     form.reset();
 })
-

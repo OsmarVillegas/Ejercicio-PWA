@@ -184,20 +184,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       fraseInput.value = ""; // Limpiar el formulario
     });
   
-    // Manejar Cache Storage
-    // async function configurarCacheStorage() {
-    //   const cache = await caches.open("PWA-Cache");
-    //   cache.addAll([
-    //     "/index.html",
-    //     "/css/stylecrud.css",
-    //     "/js/funcionalidadFormulario.js",
-    //     "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css",
-    //     "https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js",
-    //     "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-    //   ]);
-    //   console.log("Recursos cacheados correctamente.");
-    // }
-  
     // Inicializar la aplicación
     await initIndexedDB();
     await sincronizarFrases();
