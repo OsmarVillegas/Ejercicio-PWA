@@ -18,8 +18,8 @@ const ASSETS = [
   "./pages/flash.html",
   "./css/styleIndex.css", // Añade aquí tus estilos si los tienes
   "./css/styleAcercaDelProyecto.css",
-  "./css/styleCrud.css",
-  "./css/styleFlash.css", 
+  "./css/stylecrud.css",
+  "./css/styleflash.css", 
   "./js/script.js", // Añade aquí tu JS principal si es necesario
   "./js/scriptFlash.js",
   "./js/scriptCrud.js", 
