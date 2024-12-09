@@ -17,8 +17,8 @@ const subscription = async () => {
   try {
     // Asegúrate de registrar el Service Worker antes de continuar
     const register = await navigator.serviceWorker.register(
-      "/service-worker.js",
-      { scope: "/Ejercicio PWA/" }
+      "./service-worker.js",
+      { scope: "./" }
     );
     console.log("Service Worker registrado con éxito:", register.scope);
 
