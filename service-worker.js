@@ -32,8 +32,13 @@ const ASSETS = [
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log("Caching assets...");
-      return cache.addAll(ASSETS);
+      return Promise.all(
+        ASSETS.map((asset) =>
+          cache.add(asset).catch((err) => {
+            console.error(`Error al agregar ${asset} al caché:`, err);
+          })
+        )
+      );
     })
   );
 });
